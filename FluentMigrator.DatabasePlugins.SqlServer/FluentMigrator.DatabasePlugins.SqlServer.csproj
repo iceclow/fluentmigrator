@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{67A55D20-D959-4010-B282-5D0134DA3D7A}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>FluentMigrator.DatabasePlugins.SqlServer</RootNamespace>
+    <AssemblyName>FluentMigrator.DatabasePlugins.SqlServer</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition">
+      <HintPath>..\lib\System.ComponentModel.Composition.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Processors\SqlServer2000ProcessorFactory.cs" />
+    <Compile Include="Processors\SqlServer2005ProcessorFactory.cs" />
+    <Compile Include="Processors\SqlServer2008ProcessorFactory.cs" />
+    <Compile Include="Processors\SqlServerCeDbFactory.cs" />
+    <Compile Include="Processors\SqlServerCeProcessor.cs" />
+    <Compile Include="Processors\SqlServerCeProcessorFactory.cs" />
+    <Compile Include="Processors\SqlServerDbFactory.cs" />
+    <Compile Include="Processors\SqlServerProcessor.cs" />
+    <Compile Include="Processors\SqlServerProcessorFactory.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Generators\SqlServer2000Generator.cs" />
+    <Compile Include="Generators\SqlServer2000TypeMap.cs" />
+    <Compile Include="Generators\SqlServer2005Generator.cs" />
+    <Compile Include="Generators\SqlServer2005TypeMap.cs" />
+    <Compile Include="Generators\SqlServer2008Generator.cs" />
+    <Compile Include="Generators\SqlServer2008TypeMap.cs" />
+    <Compile Include="Generators\SqlServerCeGenerator.cs" />
+    <Compile Include="Generators\SqlServerCeTypeMap.cs" />
+    <Compile Include="Generators\SqlServerColumn.cs" />
+    <Compile Include="Generators\SqlServerQuoter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\src\FluentMigrator\FluentMigrator.csproj">
+      <Project>{FD9410F9-6FEA-47F7-A78E-B4F6FB0539B8}</Project>
+      <Name>FluentMigrator</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
