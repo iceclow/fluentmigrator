@@ -2,7 +2,7 @@
 
 using System.Globalization;
 
-namespace FluentMigrator.Runner.Generators.Generic
+namespace FluentMigrator.Runner.Generators.Shared.Generic
 {
     using System;
 
@@ -20,10 +20,10 @@ namespace FluentMigrator.Runner.Generators.Generic
             if (value is Guid) { return FormatGuid((Guid)value); }
             if (value is DateTime) { return FormatDateTime((DateTime)value); }
             if (value.GetType().IsEnum) { return FormatEnum(value); }
-            if (value is double) {return FormatDouble((double)value);}
-            if (value is float) {return FormatFloat((float)value);}
+            if (value is double) { return FormatDouble((double)value); }
+            if (value is float) { return FormatFloat((float)value); }
             if (value is decimal) { return FormatDecimal((decimal)value); }
-            
+
             return value.ToString();
         }
 
@@ -107,8 +107,9 @@ namespace FluentMigrator.Runner.Generators.Generic
             return (name.StartsWith(OpenQuote) && name.EndsWith(CloseQuote));
         }
 
-        public virtual string QuoteCommand(string command){
-            return command.Replace("\'","\'\'");
+        public virtual string QuoteCommand(string command)
+        {
+            return command.Replace("\'", "\'\'");
         }
 
         private bool ShouldQuote(string name)

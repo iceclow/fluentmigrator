@@ -1,7 +1,8 @@
 ﻿using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Base;
+using FluentMigrator.Runner.Generators.Shared.Base;
+using FluentMigrator.Runner.Generators.Shared;
 
-namespace FluentMigrator.Runner.Generators.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
 {
 	internal class SqlServerColumn : ColumnBase
 	{

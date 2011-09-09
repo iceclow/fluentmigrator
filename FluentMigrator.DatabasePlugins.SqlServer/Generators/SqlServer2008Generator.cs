@@ -18,7 +18,7 @@
 
 
 
-namespace FluentMigrator.Runner.Generators.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
 {
     using System;
     using FluentMigrator.Expressions;

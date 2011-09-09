@@ -1,6 +1,7 @@
-﻿using FluentMigrator.Runner.Generators.Generic;
+﻿using FluentMigrator.Runner.Generators.Shared.Generic;
+using FluentMigrator.Runner.Shared;
 
-namespace FluentMigrator.Runner.Generators.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
 {
     public class SqlServerQuoter : GenericQuoter
     {

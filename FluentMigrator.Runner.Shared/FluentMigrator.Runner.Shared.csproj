@@ -56,8 +56,12 @@
     <Compile Include="Generators\IColumn.cs" />
     <Compile Include="Generators\IQuoter.cs" />
     <Compile Include="Generators\ITypeMap.cs" />
+    <Compile Include="IAnnouncer.cs" />
     <Compile Include="Processors\DbFactoryBase.cs" />
     <Compile Include="Processors\IDbFactory.cs" />
+    <Compile Include="Processors\IMigrationProcessorFactory.cs" />
+    <Compile Include="Processors\MigrationProcessorFactory.cs" />
+    <Compile Include="Processors\ProcessorBase.cs" />
     <Compile Include="Processors\ReflectionBasedDbFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

@@ -1,4 +1,4 @@
-﻿using FluentMigrator.Runner.Generators.Generic;
+﻿using FluentMigrator.Runner.Generators.Shared.Generic;
 
 namespace FluentMigrator.Runner.Generators.SQLite
 {

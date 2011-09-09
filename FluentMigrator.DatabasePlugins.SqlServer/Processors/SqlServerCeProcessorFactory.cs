@@ -19,17 +19,19 @@
 
 #endregion
 
-namespace FluentMigrator.Runner.Processors.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
-	using Generators.SqlServer;
+    using Generators;
+    using FluentMigrator.Runner.Shared.Processors;
+    using FluentMigrator.Runner.Shared;
 
-	public class SqlServerCeProcessorFactory : MigrationProcessorFactory
-	{
-		public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)
-		{
-			var factory = new SqlServerCeDbFactory();
-			var connection = factory.CreateConnection(connectionString);
-			return new SqlServerCeProcessor(connection, new SqlServerCeGenerator(), announcer, options, factory);
-		}
-	}
+    public class SqlServerCeProcessorFactory : MigrationProcessorFactory
+    {
+        public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)
+        {
+            var factory = new SqlServerCeDbFactory();
+            var connection = factory.CreateConnection(connectionString);
+            return new SqlServerCeProcessor(connection, new SqlServerCeGenerator(), announcer, options, factory);
+        }
+    }
 }

@@ -1,4 +1,5 @@
-namespace FluentMigrator.Runner.Processors.SqlServer
+using FluentMigrator.Runner.Processors.Shared;
+namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
     public class SqlServerCeDbFactory : ReflectionBasedDbFactory
     {

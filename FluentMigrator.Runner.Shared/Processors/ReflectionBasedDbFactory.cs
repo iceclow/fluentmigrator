@@ -1,4 +1,4 @@
-namespace FluentMigrator.Runner.Processors
+namespace FluentMigrator.Runner.Processors.Shared
 {
     using System;
     using System.Data.Common;
@@ -16,7 +16,7 @@ namespace FluentMigrator.Runner.Processors
 
         protected override DbProviderFactory CreateFactory()
         {
-            return (DbProviderFactory) AppDomain.CurrentDomain.CreateInstanceAndUnwrap(assemblyName, dbProviderFactoryTypeName);
+            return (DbProviderFactory)AppDomain.CurrentDomain.CreateInstanceAndUnwrap(assemblyName, dbProviderFactoryTypeName);
         }
     }
 }

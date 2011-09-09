@@ -18,13 +18,14 @@
 
 
 
-namespace FluentMigrator.Runner.Generators.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
 {
     using System;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
     using System.Linq;
     using System.Collections.Generic;
+    using FluentMigrator.Runner.Generators.Shared;
 
 	public class SqlServer2005Generator : SqlServer2000Generator
 	{

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Data;
 using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Base;
+using FluentMigrator.Runner.Generators.Shared.Base;
 using System.Collections.Generic;
 using System.Linq;
 

@@ -2,14 +2,16 @@ using System;
 using System.Data;
 using System.Data.Common;
 using FluentMigrator.Builders.Execute;
+using FluentMigrator.Runner.Processors.Shared;
+using FluentMigrator.Runner.Shared;
 
 
 namespace FluentMigrator.Runner.Processors.Oracle
 {
     public class OracleProcessor : ProcessorBase
     {
-    	private DbConnection Connection { get; set; }
-    	private readonly IDbFactory factory;
+        private DbConnection Connection { get; set; }
+        private readonly IDbFactory factory;
 
         public override string DatabaseType
         {
@@ -20,10 +22,10 @@ namespace FluentMigrator.Runner.Processors.Oracle
             : base(generator, announcer, options)
         {
             Connection = connection;
-        	this.factory = factory;
+            this.factory = factory;
 
-        	//oracle does not support ddl transactions
-        	//this.Transaction = this.Connection.BeginTransaction();
+            //oracle does not support ddl transactions
+            //this.Transaction = this.Connection.BeginTransaction();
         }
 
         public override bool SchemaExists(string schemaName)

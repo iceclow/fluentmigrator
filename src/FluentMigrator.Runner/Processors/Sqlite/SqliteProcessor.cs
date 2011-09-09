@@ -22,6 +22,8 @@ using System.Data;
 using System.Data.Common;
 
 using FluentMigrator.Builders.Execute;
+using FluentMigrator.Runner.Processors.Shared;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Runner.Processors.Sqlite
 {

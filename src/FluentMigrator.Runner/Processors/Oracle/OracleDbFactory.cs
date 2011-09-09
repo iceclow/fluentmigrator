@@ -1,4 +1,5 @@
-﻿namespace FluentMigrator.Runner.Processors.Oracle
+﻿using FluentMigrator.Runner.Processors.Shared;
+namespace FluentMigrator.Runner.Processors.Oracle
 {
     public class OracleDbFactory : ReflectionBasedDbFactory
     {

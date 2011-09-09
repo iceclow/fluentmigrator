@@ -1,3 +1,4 @@
+using FluentMigrator.Runner.Shared;
 namespace FluentMigrator.Runner.Initialization
 {
     public class RunnerContext : IRunnerContext
@@ -23,7 +24,8 @@ namespace FluentMigrator.Runner.Initialization
 
         public IAnnouncer Announcer
         {
-            get; private set;
+            get;
+            private set;
         }
 
         public IStopWatch StopWatch

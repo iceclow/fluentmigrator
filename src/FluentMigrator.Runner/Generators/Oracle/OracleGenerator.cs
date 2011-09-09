@@ -8,8 +8,8 @@ namespace FluentMigrator.Runner.Generators.Oracle
     using System.Text;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
-    using FluentMigrator.Runner.Generators.Generic;
-    using FluentMigrator.Runner.Generators.Base;
+    using FluentMigrator.Runner.Generators.Shared.Generic;
+    using FluentMigrator.Runner.Generators.Shared.Base;
 
 	public class OracleGenerator : GenericGenerator
 	{

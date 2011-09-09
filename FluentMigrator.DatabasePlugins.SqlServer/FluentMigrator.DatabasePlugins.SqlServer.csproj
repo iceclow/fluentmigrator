@@ -65,6 +65,10 @@
     <Compile Include="Generators\SqlServerQuoter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\FluentMigrator.Runner.Shared\FluentMigrator.Runner.Shared.csproj">
+      <Project>{99A831FB-A395-4E43-992E-F2533391D615}</Project>
+      <Name>FluentMigrator.Runner.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\src\FluentMigrator\FluentMigrator.csproj">
       <Project>{FD9410F9-6FEA-47F7-A78E-B4F6FB0539B8}</Project>
       <Name>FluentMigrator</Name>

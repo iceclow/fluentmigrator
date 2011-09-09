@@ -25,6 +25,7 @@ using System.Reflection;
 using FluentMigrator.Expressions;
 using FluentMigrator.Infrastructure;
 using FluentMigrator.Runner.Initialization;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Runner
 {

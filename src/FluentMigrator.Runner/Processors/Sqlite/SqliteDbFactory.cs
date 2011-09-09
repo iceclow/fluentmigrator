@@ -1,3 +1,4 @@
+using FluentMigrator.Runner.Processors.Shared;
 namespace FluentMigrator.Runner.Processors.Sqlite
 {
     public class SqliteDbFactory : ReflectionBasedDbFactory

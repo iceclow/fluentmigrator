@@ -1,13 +1,13 @@
-namespace FluentMigrator.Runner.Processors
+namespace FluentMigrator.Runner.Processors.Shared
 {
-	using System;
-	using System.Data.Common;
+    using System;
+    using System.Data.Common;
 
-	public interface IDbFactory
-	{
-		DbConnection CreateConnection(string connectionString);
-		DbCommand CreateCommand(string commandText, DbConnection connection, DbTransaction transaction);
-		DbDataAdapter CreateDataAdapter(DbCommand command);
-		DbCommand CreateCommand(string commandText, DbConnection connection);
-	}
+    public interface IDbFactory
+    {
+        DbConnection CreateConnection(string connectionString);
+        DbCommand CreateCommand(string commandText, DbConnection connection, DbTransaction transaction);
+        DbDataAdapter CreateDataAdapter(DbCommand command);
+        DbCommand CreateCommand(string commandText, DbConnection connection);
+    }
 }

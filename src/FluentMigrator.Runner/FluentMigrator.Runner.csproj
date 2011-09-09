@@ -151,7 +151,6 @@
     <Compile Include="Generators\SQLite\SqliteColumn.cs" />
     <Compile Include="Generators\SQLite\SqliteQuoter.cs" />
     <Compile Include="Generators\SQLite\SqliteTypeMap.cs" />
-    <Compile Include="IAnnouncer.cs" />
     <Compile Include="Generators\MySql\MySqlGenerator.cs" />
     <Compile Include="Generators\Oracle\OracleGenerator.cs" />
     <Compile Include="IFormattingAnnouncer.cs" />
@@ -170,7 +169,6 @@
     <Compile Include="IVersionLoader.cs" />
     <Compile Include="Processors\Jet\JetProcessor.cs" />
     <Compile Include="Processors\Jet\JetProcessorFactory.cs" />
-    <Compile Include="Processors\MigrationProcessorFactory.cs" />
     <Compile Include="Processors\MySql\MySqlDbFactory.cs" />
     <Compile Include="Processors\MySql\MySqlProcessor.cs" />
     <Compile Include="Processors\MySql\MySqlProcessorFactory.cs" />
@@ -183,13 +181,12 @@
     <Compile Include="Processors\ProcessorFactory.cs" />
     <Compile Include="Processors\ProcessorOptions.cs" />
     <Compile Include="Processors\Sqlite\SqliteDbFactory.cs" />
-    <Compile Include="Processors\IMigrationProcessorFactory.cs" />
     <Compile Include="MigrationLoader.cs" />
     <Compile Include="IMigrationLoader.cs" />
     <Compile Include="MigrationRunner.cs" />
     <Compile Include="Generators\SQLite\SqliteGenerator.cs" />
     <Compile Include="Processors\Sqlite\SqliteProcessorFactory.cs" />
-    <Compile Include="Processors\ProcessorBase.cs" />
+    <Compile Include="ProcessorBase.cs" />
     <Compile Include="Processors\Sqlite\SqliteProcessor.cs" />
     <Compile Include="ProfileLoader.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

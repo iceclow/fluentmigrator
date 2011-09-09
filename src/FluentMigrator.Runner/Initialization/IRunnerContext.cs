@@ -16,6 +16,7 @@
 //
 #endregion
 
+using FluentMigrator.Runner.Shared;
 namespace FluentMigrator.Runner.Initialization
 {
     public interface IRunnerContext

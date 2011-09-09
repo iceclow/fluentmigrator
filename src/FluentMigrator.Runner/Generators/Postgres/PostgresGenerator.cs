@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Text;
 using FluentMigrator.Expressions;
 using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Generic;
+using FluentMigrator.Runner.Generators.Shared.Generic;
 
 namespace FluentMigrator.Runner.Generators.Postgres
 {

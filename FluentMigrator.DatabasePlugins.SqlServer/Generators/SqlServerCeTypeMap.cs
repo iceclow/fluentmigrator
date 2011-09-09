@@ -22,7 +22,7 @@
 namespace FluentMigrator.Runner.Generators
 {
     using System.Data;
-    using FluentMigrator.Runner.Generators.Base;
+    using FluentMigrator.Runner.Generators.Shared.Base;
 
     internal class SqlServerCeTypeMap : TypeMapBase
     {

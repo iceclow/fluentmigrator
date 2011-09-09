@@ -2,6 +2,8 @@
 {
     using System.Data.Common;
     using Generators.Postgres;
+    using FluentMigrator.Runner.Shared.Processors;
+    using FluentMigrator.Runner.Shared;
 
     public class PostgresProcessorFactory : MigrationProcessorFactory
     {

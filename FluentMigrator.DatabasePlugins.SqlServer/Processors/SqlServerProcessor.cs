@@ -21,15 +21,19 @@ using System;
 using System.Data;
 using System.IO;
 using FluentMigrator.Builders.Execute;
+using FluentMigrator.DatabasePlugins.SqlServer.Processors;
 
-namespace FluentMigrator.Runner.Processors.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
-	using System.Data.Common;
+    using System.Data.Common;
+    using FluentMigrator.Runner.Shared.Processors;
+    using FluentMigrator.Runner.Shared;
+    using FluentMigrator.Runner.Processors.Shared;
 
-	public sealed class SqlServerProcessor : ProcessorBase
+    public sealed class SqlServerProcessor : ProcessorBase
     {
-		private readonly IDbFactory factory;
-		public DbConnection Connection { get; private set; }
+        private readonly IDbFactory factory;
+        public DbConnection Connection { get; private set; }
         public DbTransaction Transaction { get; private set; }
         public bool WasCommitted { get; private set; }
 
@@ -41,13 +45,13 @@ namespace FluentMigrator.Runner.Processors.SqlServer
         public SqlServerProcessor(DbConnection connection, IMigrationGenerator generator, IAnnouncer announcer, IMigrationProcessorOptions options, IDbFactory factory)
             : base(generator, announcer, options)
         {
-        	this.factory = factory;
-        	Connection = connection;
+            this.factory = factory;
+            Connection = connection;
             connection.Open();
             BeginTransaction();
         }
 
-		private static string SafeSchemaName(string schemaName)
+        private static string SafeSchemaName(string schemaName)
         {
             return string.IsNullOrEmpty(schemaName) ? "dbo" : FormatSqlEscape(schemaName);
         }
@@ -241,7 +245,7 @@ namespace FluentMigrator.Runner.Processors.SqlServer
                 expression.Operation(Connection, Transaction);
         }
 
-		private static string FormatSqlEscape(string sql)
+        private static string FormatSqlEscape(string sql)
         {
             return sql.Replace("'", "''");
         }

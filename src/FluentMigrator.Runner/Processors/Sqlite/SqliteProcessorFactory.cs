@@ -1,6 +1,8 @@
 ﻿namespace FluentMigrator.Runner.Processors.Sqlite
 {
     using Generators.SQLite;
+    using FluentMigrator.Runner.Shared.Processors;
+    using FluentMigrator.Runner.Shared;
 
     public class SqliteProcessorFactory : MigrationProcessorFactory
     {

@@ -25,15 +25,16 @@ namespace FluentMigrator.Runner.Generators.MySql
     using System.Text;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
-    using FluentMigrator.Runner.Generators.Generic;
-    using FluentMigrator.Runner.Generators.Base;
+    using FluentMigrator.Runner.Generators.Shared.Generic;
+    using FluentMigrator.Runner.Generators.Shared.Base;
+    using FluentMigrator.Runner.Shared;
 
-
-	public class MySqlGenerator : GenericGenerator
-	{
-		public MySqlGenerator() : base(new MySqlColumn(), new MySqlQuoter())
-		{
-		}
+    public class MySqlGenerator : GenericGenerator
+    {
+        public MySqlGenerator()
+            : base(new MySqlColumn(), new MySqlQuoter())
+        {
+        }
 
         public override string AlterColumn { get { return "ALTER TABLE {0} MODIFY COLUMN {1}"; } }
 
@@ -47,18 +48,18 @@ namespace FluentMigrator.Runner.Generators.MySql
         }
 
         public override string Generate(RenameColumnExpression expression)
-		{
-			// may need to add definition to end. blerg
-			//return String.Format("ALTER TABLE `{0}` CHANGE COLUMN {1} {2}", expression.TableName, expression.OldName, expression.NewName);
-			
-			// NOTE: The above does not work, as the CHANGE COLUMN syntax in Mysql requires the column definition to be re-specified,
-			// even if it has not changed; so marking this as not working for now
-            return compatabilityMode.HandleCompatabilty("Renaming of columns is not supporteed for MySql");
-		}
+        {
+            // may need to add definition to end. blerg
+            //return String.Format("ALTER TABLE `{0}` CHANGE COLUMN {1} {2}", expression.TableName, expression.OldName, expression.NewName);
 
-		public override string Generate(AlterDefaultConstraintExpression expression)
-		{
+            // NOTE: The above does not work, as the CHANGE COLUMN syntax in Mysql requires the column definition to be re-specified,
+            // even if it has not changed; so marking this as not working for now
+            return compatabilityMode.HandleCompatabilty("Renaming of columns is not supporteed for MySql");
+        }
+
+        public override string Generate(AlterDefaultConstraintExpression expression)
+        {
             return compatabilityMode.HandleCompatabilty("Altering of default constrints is not supporteed for MySql");
-		}
-	}
+        }
+    }
 }

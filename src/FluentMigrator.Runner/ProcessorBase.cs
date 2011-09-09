@@ -18,6 +18,7 @@
 
 using FluentMigrator.Builders.Execute;
 using FluentMigrator.Expressions;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Runner.Processors
 {

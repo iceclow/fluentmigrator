@@ -22,9 +22,12 @@ using System.Data;
 using System.IO;
 using FluentMigrator.Builders.Execute;
 
-namespace FluentMigrator.Runner.Processors.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
 	using System.Data.Common;
+    using FluentMigrator.Runner.Shared.Processors;
+    using FluentMigrator.Runner.Processors.Shared;
+    using FluentMigrator.Runner.Shared;
 
 	public sealed class SqlServerCeProcessor : ProcessorBase
     {

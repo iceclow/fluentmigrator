@@ -17,17 +17,19 @@
 //
 #endregion
 
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
+using FluentMigrator.Runner.Shared.Processors;
+using FluentMigrator.Runner.Shared;
 
-namespace FluentMigrator.Runner.Processors.SqlServer
+namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
-	public class SqlServer2008ProcessorFactory : MigrationProcessorFactory
-	{
-		public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)
-		{
-			var factory = new SqlServerDbFactory();
-			var connection = factory.CreateConnection(connectionString);
-			return new SqlServerProcessor(connection, new SqlServer2008Generator(), announcer, options, factory);
-		}
-	}
+    public class SqlServer2008ProcessorFactory : MigrationProcessorFactory
+    {
+        public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)
+        {
+            var factory = new SqlServerDbFactory();
+            var connection = factory.CreateConnection(connectionString);
+            return new SqlServerProcessor(connection, new SqlServer2008Generator(), announcer, options, factory);
+        }
+    }
 }
