@@ -8,8 +8,8 @@ namespace FluentMigrator.Runner.Generators.Jet
     using System.Text;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
-    using FluentMigrator.Runner.Generators.Shared.Base;
-    using FluentMigrator.Runner.Generators.Shared.Generic;
+    using FluentMigrator.Runner.Shared.Generators.Base;
+    using FluentMigrator.Runner.Shared.Generators.Generic;
 
     public class JetGenerator : GenericGenerator
     {

@@ -18,7 +18,7 @@
 
 using FluentMigrator.Expressions;
 
-namespace FluentMigrator.Runner.Generators.Shared.Base
+namespace FluentMigrator.Runner.Shared.Generators.Base
 {
 	public abstract class GeneratorBase : IMigrationGenerator
 	{

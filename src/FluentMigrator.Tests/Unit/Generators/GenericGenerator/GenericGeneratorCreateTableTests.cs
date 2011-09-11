@@ -7,7 +7,7 @@ namespace FluentMigrator.Tests.Unit.Generators
     using NUnit.Framework;
     using NUnit.Should;
     using System.Data;
-    using FluentMigrator.Runner.Generators.Shared.Generic;
+    using FluentMigrator.Runner.Shared.Generators.Generic;
     public class GenericGeneratorCreateTableTests : GenericGeneratorTestBase
     {
         [Test]

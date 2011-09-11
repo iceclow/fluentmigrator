@@ -3,7 +3,7 @@
 namespace FluentMigrator.Runner.Generators.Jet
 {
     using System.Data;
-    using FluentMigrator.Runner.Generators.Shared.Base;
+    using FluentMigrator.Runner.Shared.Generators.Base;
 
 	internal class JetTypeMap : TypeMapBase
 	{

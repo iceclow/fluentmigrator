@@ -4,14 +4,14 @@ using System.Threading;
 using FluentMigrator.Runner.Generators;
 using NUnit.Framework;
 using NUnit.Should;
-using FluentMigrator.Runner.Generators.Shared.Base;
-using FluentMigrator.Runner.Generators.Shared.Generic;
+using FluentMigrator.Runner.Shared.Generators.Base;
+using FluentMigrator.Runner.Shared.Generators.Generic;
 using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using FluentMigrator.Runner.Generators.MySql;
 using FluentMigrator.Runner.Generators.Oracle;
 using FluentMigrator.Runner.Generators.SQLite;
 using FluentMigrator.Runner.Generators.Jet;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators;
 
 namespace FluentMigrator.Tests.Unit.Generators
 {

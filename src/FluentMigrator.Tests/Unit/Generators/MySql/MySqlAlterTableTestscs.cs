@@ -7,7 +7,7 @@ using FluentMigrator.Runner.Generators.MySql;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators;
 
 namespace FluentMigrator.Tests.Unit.Generators.MySql
 {

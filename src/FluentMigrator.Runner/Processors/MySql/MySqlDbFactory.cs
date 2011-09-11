@@ -1,4 +1,4 @@
-using FluentMigrator.Runner.Processors.Shared;
+using FluentMigrator.Runner.Shared.Processors;
 namespace FluentMigrator.Runner.Processors.MySql
 {
     public class MySqlDbFactory : ReflectionBasedDbFactory

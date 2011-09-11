@@ -2,12 +2,12 @@
 using System.Collections.Generic;
 using FluentMigrator.Expressions;
 using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Shared.Base;
+using FluentMigrator.Runner.Shared.Generators.Base;
 using System.Linq;
 using System.Data;
 using FluentMigrator.Runner.Shared;
 
-namespace FluentMigrator.Runner.Generators.Shared.Generic
+namespace FluentMigrator.Runner.Shared.Generators.Generic
 {
     public abstract class GenericGenerator : GeneratorBase
     {

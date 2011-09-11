@@ -4,7 +4,7 @@ using System.Data;
 using System.Linq;
 using FluentMigrator.Model;
 
-namespace FluentMigrator.Runner.Generators.Shared.Base
+namespace FluentMigrator.Runner.Shared.Generators.Base
 {
     public abstract class ColumnBase : IColumn
     {

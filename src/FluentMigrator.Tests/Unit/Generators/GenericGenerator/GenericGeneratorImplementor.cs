@@ -3,7 +3,7 @@
 namespace FluentMigrator.Tests.Unit.Generators
 {
     using System;
-    using FluentMigrator.Runner.Generators.Shared.Generic;
+    using FluentMigrator.Runner.Shared.Generators.Generic;
 
     public class GenericGeneratorImplementor : GenericGenerator
     {

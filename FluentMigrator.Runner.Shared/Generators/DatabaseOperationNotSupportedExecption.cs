@@ -1,5 +1,5 @@
 ﻿
-namespace FluentMigrator.Runner.Generators.Shared
+namespace FluentMigrator.Runner.Shared.Generators
 {
     using System;
     using System.Runtime.Serialization;

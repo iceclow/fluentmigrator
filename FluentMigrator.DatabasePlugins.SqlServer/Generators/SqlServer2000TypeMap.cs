@@ -4,7 +4,7 @@ namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
 {
 
     using System.Data;
-    using FluentMigrator.Runner.Generators.Shared.Base;
+    using FluentMigrator.Runner.Shared.Generators.Base;
 
     internal class SqlServer2000TypeMap : TypeMapBase
     {

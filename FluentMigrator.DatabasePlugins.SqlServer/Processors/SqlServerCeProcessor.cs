@@ -26,7 +26,7 @@ namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
 	using System.Data.Common;
     using FluentMigrator.Runner.Shared.Processors;
-    using FluentMigrator.Runner.Processors.Shared;
+    using FluentMigrator.Runner.Shared.Processors;
     using FluentMigrator.Runner.Shared;
 
 	public sealed class SqlServerCeProcessor : ProcessorBase

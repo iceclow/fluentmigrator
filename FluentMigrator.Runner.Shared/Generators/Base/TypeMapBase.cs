@@ -1,6 +1,6 @@
 ﻿
 
-namespace FluentMigrator.Runner.Generators.Shared.Base
+namespace FluentMigrator.Runner.Shared.Generators.Base
 {
     using System;
     using System.Collections.Generic;

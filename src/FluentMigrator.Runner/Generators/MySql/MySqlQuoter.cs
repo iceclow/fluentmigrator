@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FluentMigrator.Runner.Generators.Shared.Generic;
+using FluentMigrator.Runner.Shared.Generators.Generic;
 
 namespace FluentMigrator.Runner.Generators.MySql
 {

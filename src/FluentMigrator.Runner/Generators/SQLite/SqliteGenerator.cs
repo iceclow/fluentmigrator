@@ -18,7 +18,7 @@
 #endregion
 
 using FluentMigrator.Expressions;
-using FluentMigrator.Runner.Generators.Shared.Generic;
+using FluentMigrator.Runner.Shared.Generators.Generic;
 using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Runner.Generators.SQLite

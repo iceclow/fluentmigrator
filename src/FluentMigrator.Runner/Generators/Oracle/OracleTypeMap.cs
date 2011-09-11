@@ -4,7 +4,7 @@ namespace FluentMigrator.Runner.Generators.Oracle
 {
 
     using System.Data;
-    using FluentMigrator.Runner.Generators.Shared.Base;
+    using FluentMigrator.Runner.Shared.Generators.Base;
 
 	internal class OracleTypeMap : TypeMapBase
 	{

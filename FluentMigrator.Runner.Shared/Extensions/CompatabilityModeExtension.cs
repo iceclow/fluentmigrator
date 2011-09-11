@@ -1,5 +1,5 @@
 ﻿using FluentMigrator.Runner.Shared;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators;
 namespace FluentMigrator.Runner.Shared
 {
     public static class CompatabilityModeExtension

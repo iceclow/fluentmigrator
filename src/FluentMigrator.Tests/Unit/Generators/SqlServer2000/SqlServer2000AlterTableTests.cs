@@ -9,7 +9,7 @@ using System.Data;
 using FluentMigrator.Model;
 using FluentMigrator.Expressions;
 using FluentMigrator.Runner.Generators;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators;
 
 namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 {

@@ -9,7 +9,7 @@ using NUnit.Framework;
 namespace FluentMigrator.Tests.Integration.Processors
 {
 	using Runner.Processors;
-    using FluentMigrator.Runner.Processors.Shared;
+    using FluentMigrator.Runner.Shared.Processors;
 
 	[TestFixture]
 	public class OracleProcessorTests

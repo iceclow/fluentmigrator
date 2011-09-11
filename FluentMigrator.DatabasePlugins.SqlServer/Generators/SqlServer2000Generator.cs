@@ -26,9 +26,9 @@ namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
     using System.Text;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
-    using FluentMigrator.Runner.Generators.Shared.Generic;
-    using FluentMigrator.Runner.Generators.Shared.Base;
-    using FluentMigrator.Runner.Generators.Shared;
+    using FluentMigrator.Runner.Shared.Generators.Generic;
+    using FluentMigrator.Runner.Shared.Generators.Base;
+    using FluentMigrator.Runner.Shared.Generators;
 
     public class SqlServer2000Generator : GenericGenerator
     {

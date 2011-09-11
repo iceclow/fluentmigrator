@@ -1,4 +1,4 @@
-namespace FluentMigrator.Runner.Processors.Shared
+namespace FluentMigrator.Runner.Shared.Processors
 {
     using System.Data.Common;
 

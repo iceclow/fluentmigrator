@@ -7,7 +7,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
     using System.Data;
     using FluentMigrator.Runner.Generators;
     using FluentMigrator.Expressions;
-    using FluentMigrator.Runner.Generators.Shared;
+    using FluentMigrator.Runner.Shared.Generators;
 
     public class JetAlterTableTests : BaseTableAlterTests
     {

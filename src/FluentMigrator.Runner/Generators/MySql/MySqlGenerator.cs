@@ -25,8 +25,8 @@ namespace FluentMigrator.Runner.Generators.MySql
     using System.Text;
     using FluentMigrator.Expressions;
     using FluentMigrator.Model;
-    using FluentMigrator.Runner.Generators.Shared.Generic;
-    using FluentMigrator.Runner.Generators.Shared.Base;
+    using FluentMigrator.Runner.Shared.Generators.Generic;
+    using FluentMigrator.Runner.Shared.Generators.Base;
     using FluentMigrator.Runner.Shared;
 
     public class MySqlGenerator : GenericGenerator

@@ -10,7 +10,7 @@ namespace FluentMigrator.Tests.Unit.Generators
     using FluentMigrator.DatabasePlugins.SqlServer.Generators;
     using NUnit.Should;
     using FluentMigrator.Runner.Generators;
-    using FluentMigrator.Runner.Generators.Shared;
+    using FluentMigrator.Runner.Shared.Generators;
 
     public class SqlServerCeGeneratorTests : GeneratorTestBase
     {

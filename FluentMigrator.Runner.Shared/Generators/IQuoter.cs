@@ -1,4 +1,4 @@
-﻿namespace FluentMigrator.Runner.Generators.Shared
+﻿namespace FluentMigrator.Runner.Shared.Generators
 {
     public interface IQuoter
     {

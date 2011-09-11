@@ -24,7 +24,7 @@ namespace FluentMigrator.DatabasePlugins.SqlServer.Generators
     using System;
     using FluentMigrator.Expressions;
     using FluentMigrator.Runner.Generators;
-    using FluentMigrator.Runner.Generators.Shared;
+    using FluentMigrator.Runner.Shared.Generators;
 
     public class SqlServerCeGenerator : SqlServer2005Generator
     {

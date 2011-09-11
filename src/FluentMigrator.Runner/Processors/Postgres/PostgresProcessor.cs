@@ -7,7 +7,7 @@ using FluentMigrator.Runner.Generators.Postgres;
 namespace FluentMigrator.Runner.Processors.Postgres
 {
     using System.Data.Common;
-    using FluentMigrator.Runner.Processors.Shared;
+    using FluentMigrator.Runner.Shared.Processors;
     using FluentMigrator.Runner.Shared;
 
     public class PostgresProcessor : ProcessorBase

@@ -7,7 +7,7 @@ using FluentMigrator.Runner.Generators.SQLite;
 using NUnit.Should;
 using FluentMigrator.Expressions;
 using FluentMigrator.Runner.Generators;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators;
 
 namespace FluentMigrator.Tests.Unit.Generators.SQLite
 {

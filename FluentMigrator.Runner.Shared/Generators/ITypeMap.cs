@@ -1,6 +1,6 @@
 ﻿using System.Data;
 
-namespace FluentMigrator.Runner.Generators.Shared
+namespace FluentMigrator.Runner.Shared.Generators
 {
     public interface ITypeMap
     {

@@ -2,7 +2,7 @@
 
 using System.Globalization;
 
-namespace FluentMigrator.Runner.Generators.Shared.Generic
+namespace FluentMigrator.Runner.Shared.Generators.Generic
 {
     using System;
 

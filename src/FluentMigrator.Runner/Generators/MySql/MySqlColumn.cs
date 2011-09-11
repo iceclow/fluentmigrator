@@ -1,6 +1,6 @@
 ﻿using System;
 using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Shared.Base;
+using FluentMigrator.Runner.Shared.Generators.Base;
 
 namespace FluentMigrator.Runner.Generators.MySql
 {

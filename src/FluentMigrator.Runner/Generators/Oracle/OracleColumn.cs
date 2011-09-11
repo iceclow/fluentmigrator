@@ -1,6 +1,6 @@
 ﻿using FluentMigrator.Model;
-using FluentMigrator.Runner.Generators.Shared.Base;
-using FluentMigrator.Runner.Generators.Shared;
+using FluentMigrator.Runner.Shared.Generators.Base;
+using FluentMigrator.Runner.Shared.Generators;
 
 namespace FluentMigrator.Runner.Generators.Oracle
 {

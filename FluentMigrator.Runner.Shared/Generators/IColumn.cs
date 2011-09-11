@@ -2,7 +2,7 @@ using FluentMigrator.Expressions;
 using FluentMigrator.Model;
 using System.Collections.Generic;
 
-namespace FluentMigrator.Runner.Generators.Shared
+namespace FluentMigrator.Runner.Shared.Generators
 {
     public interface IColumn
     {

@@ -23,7 +23,7 @@ using FluentMigrator.Builders.Execute;
 namespace FluentMigrator.Runner.Processors.MySql
 {
     using System.Data.Common;
-    using FluentMigrator.Runner.Processors.Shared;
+    using FluentMigrator.Runner.Shared.Processors;
     using FluentMigrator.Runner.Shared;
 
     public class MySqlProcessor : ProcessorBase
