@@ -15,14 +15,10 @@ namespace FluentMigrator.Runner.Processors
 
         static ProcessorFactory()
         {
-            var catalogs = new AggregateCatalog(new ComposablePartCatalog[] 
-                                               {
-                                                   new DirectoryCatalog("DatabasePlugins"),
-                                                   new AssemblyCatalog(typeof(IMigrationProcessorFactory).Assembly)
-                                               });
+            var catalog = new DirectoryCatalog("DatabasePlugins");
 
-            container = new CompositionContainer(catalogs);
-
+            container = new CompositionContainer(catalog);
+            //container.ComposeParts(this);
         }
 
         public static IMigrationProcessorFactory GetFactory(string processorName)

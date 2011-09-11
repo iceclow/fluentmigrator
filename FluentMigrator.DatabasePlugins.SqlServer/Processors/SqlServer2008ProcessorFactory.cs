@@ -20,9 +20,11 @@
 using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using FluentMigrator.Runner.Shared.Processors;
 using FluentMigrator.Runner.Shared;
+using System.ComponentModel.Composition;
 
 namespace FluentMigrator.DatabasePlugins.SqlServer.Processors
 {
+    [Export(typeof(IMigrationProcessorFactory))]
     public class SqlServer2008ProcessorFactory : MigrationProcessorFactory
     {
         public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)

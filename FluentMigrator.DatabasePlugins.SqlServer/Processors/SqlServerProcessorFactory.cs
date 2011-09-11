@@ -4,7 +4,9 @@
     using Generators;
     using FluentMigrator.Runner.Shared.Processors;
     using FluentMigrator.Runner.Shared;
+    using System.ComponentModel.Composition;
 
+    [Export(typeof(IMigrationProcessorFactory))]
     public class SqlServerProcessorFactory : MigrationProcessorFactory
     {
         public override IMigrationProcessor Create(string connectionString, IAnnouncer announcer, IMigrationProcessorOptions options)
