@@ -30,6 +30,7 @@ using FluentMigrator.Runner.Processors;
 using NUnit.Framework;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators.SQLite;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Tests.Integration.Processors
 {

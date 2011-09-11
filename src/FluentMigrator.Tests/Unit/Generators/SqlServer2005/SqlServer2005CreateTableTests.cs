@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
@@ -23,8 +23,8 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 
         }
 
-        [Test] 
-        public   void CanCreateTableWithDefaultSchema()
+        [Test]
+        public void CanCreateTableWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
 
@@ -33,7 +33,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithCustomSchema()
+        public void CanCreateTableWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.SchemaName = "TestSchema";
@@ -42,7 +42,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithCustomColumnTypeWithDefaultSchema()
+        public void CanCreateTableWithCustomColumnTypeWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.Columns[0].IsPrimaryKey = true;
@@ -55,7 +55,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithCustomColumnTypeWithCustomSchema()
+        public void CanCreateTableWithCustomColumnTypeWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.SchemaName = "TestSchema";
@@ -69,7 +69,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithPrimaryKeyWithDefaultSchema()
+        public void CanCreateTableWithPrimaryKeyWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithPrimaryKeyExpression();
             var sql = generator.Generate(expression);
@@ -78,7 +78,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithPrimaryKeyWithCustomSchema()
+        public void CanCreateTableWithPrimaryKeyWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithPrimaryKeyExpression();
             expression.SchemaName = "TestSchema";
@@ -88,7 +88,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithIdentityWithDefaultSchema()
+        public void CanCreateTableWithIdentityWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithAutoIncrementExpression();
             var sql = generator.Generate(expression);
@@ -97,7 +97,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithIdentityWithCustomSchema()
+        public void CanCreateTableWithIdentityWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithAutoIncrementExpression();
             expression.SchemaName = "TestSchema";
@@ -107,7 +107,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithNullableFieldWithDefaultSchema()
+        public void CanCreateTableWithNullableFieldWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.Columns[0].IsNullable = true;
@@ -117,7 +117,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithNullableFieldWithCustomSchema()
+        public void CanCreateTableWithNullableFieldWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.SchemaName = "TestSchema";
@@ -128,17 +128,17 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithDefaultValueWithDefaultSchema()
+        public void CanCreateTableWithDefaultValueWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithDefaultValue();
             var sql = generator.Generate(expression);
             sql.ShouldBe(
                 "CREATE TABLE [dbo].[TestTable1] ([TestColumn1] NVARCHAR(255) NOT NULL CONSTRAINT DF_TestTable1_TestColumn1 DEFAULT 'Default', [TestColumn2] INT NOT NULL CONSTRAINT DF_TestTable1_TestColumn2 DEFAULT 0)");
-  
+
         }
 
         [Test]
-        public   void CanCreateTableWithDefaultValueWithCustomSchema()
+        public void CanCreateTableWithDefaultValueWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithDefaultValue();
             expression.SchemaName = "TestSchema";
@@ -149,7 +149,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithDefaultValueExplicitlySetToNullWithDefaultSchema()
+        public void CanCreateTableWithDefaultValueExplicitlySetToNullWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.Columns[0].DefaultValue = null;
@@ -161,7 +161,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithDefaultValueExplicitlySetToNullWithCustomSchema()
+        public void CanCreateTableWithDefaultValueExplicitlySetToNullWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
             expression.SchemaName = "TestSchema";
@@ -174,7 +174,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateIndexWithDefaultSchema()
+        public void CanCreateIndexWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateIndexExpression();
             var sql = generator.Generate(expression);
@@ -182,7 +182,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateIndexWithCustomSchema()
+        public void CanCreateIndexWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateIndexExpression();
             expression.Index.SchemaName = "TestSchema";
@@ -191,7 +191,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateMultiColumnIndexWithDefaultSchema()
+        public void CanCreateMultiColumnIndexWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateMultiColumnCreateIndexExpression();
             var sql = generator.Generate(expression);
@@ -199,7 +199,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateMultiColumnIndexWithCustomSchema()
+        public void CanCreateMultiColumnIndexWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateMultiColumnCreateIndexExpression();
             expression.Index.SchemaName = "TestSchema";
@@ -318,16 +318,16 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         }
 
         [Test]
-        public   void CanCreateTableWithMultiColumnPrimaryKeyWithDefaultSchema()
+        public void CanCreateTableWithMultiColumnPrimaryKeyWithDefaultSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithMultiColumnPrimaryKeyExpression();
             var result = generator.Generate(expression);
             result.ShouldBe("CREATE TABLE [dbo].[TestTable1] ([TestColumn1] NVARCHAR(255) NOT NULL, [TestColumn2] INT NOT NULL, PRIMARY KEY ([TestColumn1], [TestColumn2]))");
-   
+
         }
 
         [Test]
-        public   void CanCreateTableWithMultiColumnPrimaryKeyWithCustomSchema()
+        public void CanCreateTableWithMultiColumnPrimaryKeyWithCustomSchema()
         {
             var expression = GeneratorTestHelper.GetCreateTableWithMultiColumnPrimaryKeyExpression();
             expression.SchemaName = "TestSchema";
@@ -372,6 +372,6 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
                 "CREATE TABLE [TestSchema].[TestTable1] ([TestColumn1] NVARCHAR(MAX) NOT NULL, [TestColumn2] INT NOT NULL)");
         }
 
-        
+
     }
 }

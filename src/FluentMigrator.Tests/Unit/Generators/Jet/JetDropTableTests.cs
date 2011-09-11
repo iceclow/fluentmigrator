@@ -4,6 +4,7 @@ using FluentMigrator.Expressions;
 using FluentMigrator.Runner.Generators.Jet;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.Jet
 {
@@ -63,7 +64,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
         [Test]
         public void CanDeleteSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new DeleteSchemaExpression()));
         }
     }

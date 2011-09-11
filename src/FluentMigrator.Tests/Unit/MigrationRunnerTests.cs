@@ -32,6 +32,7 @@ using NUnit.Framework;
 using NUnit.Should;
 using FluentMigrator.Runner.Versioning;
 using System.Data;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Tests.Unit
 {

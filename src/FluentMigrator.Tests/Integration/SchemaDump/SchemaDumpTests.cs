@@ -8,7 +8,7 @@ using FluentMigrator.Runner;
 using FluentMigrator.Runner.Announcers;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Runner.Processors;
-using FluentMigrator.Runner.Processors.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Processors;
 using FluentMigrator.Runner.Initialization;
 using FluentMigrator.SchemaDump.SchemaWriters;
 using FluentMigrator.Model;
@@ -17,18 +17,19 @@ using FluentMigrator.Tests.Helpers;
 using FluentMigrator.Tests.Integration.Migrations;
 using NUnit.Framework;
 using NUnit.Should;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 
-namespace FluentMigrator.Tests.Integration.SchemaDump {
+namespace FluentMigrator.Tests.Integration.SchemaDump
+{
 
     [TestFixture]
-    public class SchemaDumpTests 
+    public class SchemaDumpTests
     {
         public SqlConnection Connection;
         public SqlServerProcessor Processor;
         public SqlServerSchemaDumper SchemaDumper;
-        
-        public SchemaDumpTests() 
+
+        public SchemaDumpTests()
         {
             Connection = new SqlConnection(IntegrationTestOptions.SqlServer2008.ConnectionString);
             Processor = new SqlServerProcessor(Connection, new SqlServer2008Generator(), new TextWriterAnnouncer(System.Console.Out), new ProcessorOptions(), new SqlServerDbFactory());
@@ -36,17 +37,17 @@ namespace FluentMigrator.Tests.Integration.SchemaDump {
         }
 
         [SetUp]
-        public void SetUp() 
+        public void SetUp()
         {
         }
 
         [TearDown]
-        public void TearDown() 
+        public void TearDown()
         {
         }
 
         [Test]
-        public void TestSchemaTestWriter() 
+        public void TestSchemaTestWriter()
         {
             TableDefinition tableDef = new TableDefinition
             {
@@ -68,11 +69,12 @@ namespace FluentMigrator.Tests.Integration.SchemaDump {
         }
 
         [Test]
-        public void CanReadBasicSchemaInfo() 
+        public void CanReadBasicSchemaInfo()
         {
             // this is the fun part.. this test should fail until the schema reading code works
             // also assume the target database contains schema described in TestMigration
-            using (var table = new SqlServerTestTable(Processor, null, "id int")) {
+            using (var table = new SqlServerTestTable(Processor, null, "id int"))
+            {
                 IList<TableDefinition> defs = SchemaDumper.ReadDbSchema();
 
                 SchemaTestWriter testWriter = new SchemaTestWriter();
@@ -84,15 +86,15 @@ namespace FluentMigrator.Tests.Integration.SchemaDump {
         }
 
         [Test]
-        public void VerifyTestMigrationSchema() 
+        public void VerifyTestMigrationSchema()
         {
             //run TestMigration migration, read, then remove...
             var runnerContext = new RunnerContext(new TextWriterAnnouncer(System.Console.Out))
             {
-                Namespace = typeof(TestMigration).Namespace                
+                Namespace = typeof(TestMigration).Namespace
             };
 
-            var runner = new MigrationRunner(typeof(TestMigration).Assembly, runnerContext, Processor);            
+            var runner = new MigrationRunner(typeof(TestMigration).Assembly, runnerContext, Processor);
             runner.Up(new TestMigration());
 
             //read schema here
@@ -100,7 +102,7 @@ namespace FluentMigrator.Tests.Integration.SchemaDump {
 
             SchemaTestWriter testWriter = new SchemaTestWriter();
             var output = GetOutput(testWriter, defs);
-            string expectedMessage = testWriter.GetMessage(4, 9, 2, 1);            
+            string expectedMessage = testWriter.GetMessage(4, 9, 2, 1);
 
             runner.Down(new TestMigration());
 
@@ -108,7 +110,7 @@ namespace FluentMigrator.Tests.Integration.SchemaDump {
             output.ShouldBe(expectedMessage);
         }
 
-        private string GetOutput(SchemaWriterBase testWriter, IList<TableDefinition> defs) 
+        private string GetOutput(SchemaWriterBase testWriter, IList<TableDefinition> defs)
         {
             MemoryStream ms = new MemoryStream();
             StreamWriter sr = new StreamWriter(ms);

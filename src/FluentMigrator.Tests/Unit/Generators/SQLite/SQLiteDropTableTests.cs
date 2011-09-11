@@ -7,6 +7,7 @@ using FluentMigrator.Runner.Generators.SQLite;
 using FluentMigrator.Runner.Generators;
 using NUnit.Should;
 using FluentMigrator.Expressions;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.SQLite
 {
@@ -40,7 +41,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         public void CanDropForeignKeyInStrictMode()
         {
             var expression = GeneratorTestHelper.GetDeleteForeignKeyExpression();
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(expression));
         }
 
@@ -71,7 +72,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         [Test]
         public void CanDeleteSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new DeleteSchemaExpression()));
         }
     }

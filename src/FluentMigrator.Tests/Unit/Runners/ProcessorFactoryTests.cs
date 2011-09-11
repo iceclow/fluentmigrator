@@ -18,40 +18,41 @@
 
 using FluentMigrator.Runner.Processors;
 using FluentMigrator.Runner.Processors.Sqlite;
-using FluentMigrator.Runner.Processors.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Processors;
 using NUnit.Framework;
+using FluentMigrator.Runner.Shared.Processors;
 
 namespace FluentMigrator.Tests.Unit.Runners
 {
-	[TestFixture]
-	public class ProcessFactoryTests
-	{
-		[Test]
-		public void CanRetrieveFactoryWithArgumentString()
-		{
-			IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("Sqlite");
-			Assert.IsTrue(factory.GetType() == typeof(SqliteProcessorFactory));
-		}
+    [TestFixture]
+    public class ProcessFactoryTests
+    {
+        [Test]
+        public void CanRetrieveFactoryWithArgumentString()
+        {
+            IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("Sqlite");
+            Assert.IsTrue(factory.GetType() == typeof(SqliteProcessorFactory));
+        }
 
-		[Test]
-		public void CanRetrieveSqlServer2000FactoryWithArgumentString()
-		{
-			IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2000");
-			Assert.IsTrue(factory.GetType() == typeof(SqlServer2000ProcessorFactory));
-		}
+        [Test]
+        public void CanRetrieveSqlServer2000FactoryWithArgumentString()
+        {
+            IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2000");
+            Assert.IsTrue(factory.GetType() == typeof(SqlServer2000ProcessorFactory));
+        }
 
-		[Test]
-		public void CanRetrieveSqlServer2005FactoryWithArgumentString()
-		{
-			IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2005");
-			Assert.IsTrue(factory.GetType() == typeof(SqlServer2005ProcessorFactory));
-		}
+        [Test]
+        public void CanRetrieveSqlServer2005FactoryWithArgumentString()
+        {
+            IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2005");
+            Assert.IsTrue(factory.GetType() == typeof(SqlServer2005ProcessorFactory));
+        }
 
-		[Test]
-		public void CanRetrieveSqlServer2008FactoryWithArgumentString()
-		{
-			IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2008");
-			Assert.IsTrue(factory.GetType() == typeof(SqlServer2008ProcessorFactory));
-		}
-	}
+        [Test]
+        public void CanRetrieveSqlServer2008FactoryWithArgumentString()
+        {
+            IMigrationProcessorFactory factory = ProcessorFactory.GetFactory("SqlServer2008");
+            Assert.IsTrue(factory.GetType() == typeof(SqlServer2008ProcessorFactory));
+        }
+    }
 }

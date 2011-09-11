@@ -23,6 +23,7 @@ using FluentMigrator.Runner.Announcers;
 using FluentMigrator.Runner.Initialization;
 using FluentMigrator.Runner.Processors;
 using Mono.Options;
+using FluentMigrator.Runner.Shared;
 
 namespace FluentMigrator.Console
 {

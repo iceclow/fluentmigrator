@@ -3,7 +3,7 @@
 namespace FluentMigrator.Tests.Unit.Generators
 {
     using System;
-    using FluentMigrator.Runner.Generators.Generic;
+    using FluentMigrator.Runner.Generators.Shared.Generic;
 
     public class GenericGeneratorImplementor : GenericGenerator
     {
@@ -12,9 +12,10 @@ namespace FluentMigrator.Tests.Unit.Generators
         /// <summary>
         /// Initializes a new instance of the <see cref="T:GenericBaseImplementor"/> class.
         /// </summary>
-        public GenericGeneratorImplementor() : base(null,null)
+        public GenericGeneratorImplementor()
+            : base(null, null)
         {
-            
+
         }
 
         public override string Generate(FluentMigrator.Expressions.CreateSchemaExpression expression)

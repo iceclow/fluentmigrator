@@ -8,6 +8,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
     using FluentMigrator.Runner.Generators.Jet;
     using FluentMigrator.Runner.Generators;
     using FluentMigrator.Expressions;
+    using FluentMigrator.Runner.Generators.Shared;
 
     public class JetCreateTableTests : BaseTableCreateTests
     {
@@ -175,7 +176,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
         [Test]
         public void CanCreateSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
 

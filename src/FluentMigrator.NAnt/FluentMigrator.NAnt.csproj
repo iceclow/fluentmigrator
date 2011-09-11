@@ -75,6 +75,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\FluentMigrator.Runner.Shared\FluentMigrator.Runner.Shared.csproj">
+      <Project>{99A831FB-A395-4E43-992E-F2533391D615}</Project>
+      <Name>FluentMigrator.Runner.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FluentMigrator.Console\FluentMigrator.Console.csproj">
       <Project>{664C7334-B44B-4D62-A0F8-063805D630AA}</Project>
       <Name>FluentMigrator.Console</Name>

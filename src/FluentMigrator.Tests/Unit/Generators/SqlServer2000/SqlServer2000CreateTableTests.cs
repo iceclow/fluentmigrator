@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Should;
 using System.Data;
 using FluentMigrator.Model;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 {
@@ -24,7 +25,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 
         }
 
-        [Test] 
+        [Test]
         public override void CanCreateTable()
         {
             var expression = GeneratorTestHelper.GetCreateTableExpression();
@@ -114,7 +115,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             var sql = generator.Generate(expression);
             sql.ShouldBe(
                 "CREATE TABLE [TestTable1] ([TestColumn1] NVARCHAR(255) NOT NULL CONSTRAINT DF_TestTable1_TestColumn1 DEFAULT 'Default', [TestColumn2] INT NOT NULL CONSTRAINT DF_TestTable1_TestColumn2 DEFAULT 0)");
-  
+
         }
 
         [Test]
@@ -203,7 +204,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             var expression = GeneratorTestHelper.GetCreateTableWithMultiColumnPrimaryKeyExpression();
             var result = generator.Generate(expression);
             result.ShouldBe("CREATE TABLE [TestTable1] ([TestColumn1] NVARCHAR(255) NOT NULL, [TestColumn2] INT NOT NULL, PRIMARY KEY ([TestColumn1], [TestColumn2]))");
-   
+
         }
 
         [Test]
@@ -217,7 +218,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         [Test]
         public void CanCreateSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
     }

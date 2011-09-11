@@ -7,7 +7,7 @@ namespace FluentMigrator.Tests.Unit.Generators
     using System.Linq;
     using System.Text;
     using NUnit.Framework;
-    using FluentMigrator.Runner.Generators.Generic;
+    using FluentMigrator.Runner.Generators.Shared.Generic;
 
     public class GenericGeneratorTestBase : GeneratorTestBase
     {

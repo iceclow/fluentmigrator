@@ -32,6 +32,8 @@ namespace FluentMigrator.Console
             {
                 System.Console.WriteLine(ex.Message);
             }
+
+            System.Console.ReadLine();
         }
     }
 }

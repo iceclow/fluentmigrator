@@ -7,6 +7,7 @@ using NUnit.Should;
 using FluentMigrator.Runner.Generators.SQLite;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.SQLite
 {
@@ -49,7 +50,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         [Test]
         public void CanRenameColumnInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(GeneratorTestHelper.GetRenameColumnExpression()));
         }
 
@@ -74,7 +75,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         public void CanAlterColumnInStrictMode()
         {
             var expression = GeneratorTestHelper.GetRenameColumnExpression();
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(expression));
         }
 
@@ -89,7 +90,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         [Test]
         public void CanCreateForeignKeyInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(GeneratorTestHelper.GetCreateForeignKeyExpression()));
         }
 
@@ -106,7 +107,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         public void CanCreateMulitColumnForeignKeyInStrictMode()
         {
 
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(GeneratorTestHelper.GetCreateMultiColumnForeignKeyExpression()));
         }
 
@@ -133,7 +134,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SQLite
         [Test]
         public void CanAlterSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
     }

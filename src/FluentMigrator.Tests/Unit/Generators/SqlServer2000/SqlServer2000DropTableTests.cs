@@ -3,10 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 {
@@ -30,7 +31,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             var expression = GeneratorTestHelper.GetDeleteColumnExpression();
             var sql = generator.Generate(expression);
 
-            var expectedSql = 
+            var expectedSql =
                 @"
 			DECLARE @default sysname, @sql nvarchar(max);
 
@@ -93,7 +94,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         [Test]
         public void CanDeleteSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new DeleteSchemaExpression()));
         }
     }

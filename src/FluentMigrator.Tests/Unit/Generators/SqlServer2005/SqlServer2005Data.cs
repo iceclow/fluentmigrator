@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Framework;
 using NUnit.Should;
 

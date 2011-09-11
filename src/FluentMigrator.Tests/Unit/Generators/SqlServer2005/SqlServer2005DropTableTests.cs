@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Should;
 using FluentMigrator.Runner.Generators;
 using FluentMigrator.Expressions;
@@ -28,7 +28,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         {
             //This does not work if it is a primary key
             var expression = GeneratorTestHelper.GetDeleteColumnExpression();
-        
+
             var sql = generator.Generate(expression);
 
             var expectedSql =
@@ -132,7 +132,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             var expression = GeneratorTestHelper.GetDeleteTableExpression();
             expression.SchemaName = "TestSchema";
             var sql = generator.Generate(expression);
-           
+
             sql.ShouldBe("DROP TABLE [TestSchema].[TestTable1]");
         }
 
@@ -142,7 +142,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             var expression = GeneratorTestHelper.GetDeleteIndexExpression();
             expression.Index.SchemaName = "TestSchema";
             var sql = generator.Generate(expression);
-           
+
             sql.ShouldBe("DROP INDEX [TestIndex] ON [TestSchema].[TestTable1]");
         }
 

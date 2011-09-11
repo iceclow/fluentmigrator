@@ -7,6 +7,7 @@ using FluentMigrator.Runner.Generators.Oracle;
 using NUnit.Should;
 using FluentMigrator.Expressions;
 using FluentMigrator.Runner.Generators;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.Oracle
 {
@@ -92,7 +93,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Oracle
         [Test]
         public void CanAlterSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
     }

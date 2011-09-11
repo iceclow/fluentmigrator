@@ -7,6 +7,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
     using System.Data;
     using FluentMigrator.Runner.Generators;
     using FluentMigrator.Expressions;
+    using FluentMigrator.Runner.Generators.Shared;
 
     public class JetAlterTableTests : BaseTableAlterTests
     {
@@ -79,7 +80,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
         public void CanRenameColumnInStrictMode()
         {
             var expression = GeneratorTestHelper.GetRenameColumnExpression();
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(expression));
 
         }
@@ -96,7 +97,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
         public void CanRenameTableInStrictMode()
         {
             var expression = GeneratorTestHelper.GetRenameColumnExpression();
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(expression));
         }
 
@@ -132,7 +133,7 @@ namespace FluentMigrator.Tests.Unit.Generators.Jet
         [Test]
         public void CanAlterSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
     }

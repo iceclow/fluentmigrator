@@ -3,12 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using NUnit.Framework;
-using FluentMigrator.Runner.Generators.SqlServer;
+using FluentMigrator.DatabasePlugins.SqlServer.Generators;
 using NUnit.Should;
 using System.Data;
 using FluentMigrator.Model;
 using FluentMigrator.Expressions;
 using FluentMigrator.Runner.Generators;
+using FluentMigrator.Runner.Generators.Shared;
 
 namespace FluentMigrator.Tests.Unit.Generators.SqlServer
 {
@@ -35,8 +36,13 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         [Test]
         public void CanAddColumnWithGetDateDefault()
         {
-            ColumnDefinition column = new ColumnDefinition { Name = "TestColumn1", Type = DbType.String, 
-                Size = 5, DefaultValue = "GetDate()" };
+            ColumnDefinition column = new ColumnDefinition
+            {
+                Name = "TestColumn1",
+                Type = DbType.String,
+                Size = 5,
+                DefaultValue = "GetDate()"
+            };
             var expression = new CreateColumnExpression { TableName = "TestTable1", Column = column };
             var sql = generator.Generate(expression);
             sql.ShouldBe("ALTER TABLE [TestTable1] ADD [TestColumn1] NVARCHAR(5) NOT NULL DEFAULT GetDate()");
@@ -50,7 +56,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
             sql.ShouldBe("ALTER TABLE [TestTable1] ADD [TestColumn1] DECIMAL(19,2) NOT NULL");
         }
 
-        
+
 
         [Test]
         public override void CanRenameTable()
@@ -130,7 +136,7 @@ namespace FluentMigrator.Tests.Unit.Generators.SqlServer
         [Test]
         public void CanAlterSchemaInStrictMode()
         {
-            generator.compatabilityMode = Runner.CompatabilityMode.STRICT;
+            generator.compatabilityMode = Runner.Shared.CompatabilityMode.STRICT;
             Assert.Throws<DatabaseOperationNotSupportedExecption>(() => generator.Generate(new CreateSchemaExpression()));
         }
     }

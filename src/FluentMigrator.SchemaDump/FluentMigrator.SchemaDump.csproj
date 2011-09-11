@@ -48,6 +48,14 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <ProjectReference Include="..\..\FluentMigrator.DatabasePlugins.SqlServer\FluentMigrator.DatabasePlugins.SqlServer.csproj">
+      <Project>{67A55D20-D959-4010-B282-5D0134DA3D7A}</Project>
+      <Name>FluentMigrator.DatabasePlugins.SqlServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\FluentMigrator.Runner.Shared\FluentMigrator.Runner.Shared.csproj">
+      <Project>{99A831FB-A395-4E43-992E-F2533391D615}</Project>
+      <Name>FluentMigrator.Runner.Shared</Name>
+    </ProjectReference>
     <ProjectReference Include="..\FluentMigrator.Runner\FluentMigrator.Runner.csproj">
       <Project>{CB468AD6-60C2-42E9-B3B0-01968EF94C65}</Project>
       <Name>FluentMigrator.Runner</Name>
