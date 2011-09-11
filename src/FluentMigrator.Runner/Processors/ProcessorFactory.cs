@@ -16,7 +16,6 @@ namespace FluentMigrator.Runner.Processors
         static ProcessorFactory()
         {
             DirectoryCatalog catalog = new DirectoryCatalog("directory");
-
             container = new CompositionContainer(catalog);
 
             batch = new CompositionBatch();
@@ -28,10 +27,7 @@ namespace FluentMigrator.Runner.Processors
         {
             foreach (var factory in Factories)
             {
-                var type = factory.GetType();
-                var name = type.Name;
-
-                if (name.StartsWith(processorName, StringComparison.OrdinalIgnoreCase))
+                if (factory.Name.StartsWith(processorName, StringComparison.OrdinalIgnoreCase))
                 {
                     return factory;
                 }
@@ -42,12 +38,9 @@ namespace FluentMigrator.Runner.Processors
 
         public static string ListAvailableProcessorTypes()
         {
-            //TODO Do not instantiante every imported type
-
             var types = container.GetExports<IMigrationProcessorFactory>();
 
-            return types.Select(x => x.Value.GetType().Name)
-                        .Select(x => x.Substring(0, x.IndexOf("ProcessorFactory")).ToLowerInvariant())
+            return types.Select(x => x.Value.Name)
                         .Aggregate((x, y) => x + "," + y);
 
         }
