@@ -5,22 +5,24 @@ using System.Reflection;
 using FluentMigrator.Runner.Shared.Processors;
 using System.ComponentModel.Composition;
 using System.ComponentModel.Composition.Hosting;
+using System.ComponentModel.Composition.Primitives;
 
 namespace FluentMigrator.Runner.Processors
 {
     public static class ProcessorFactory
     {
-        private static CompositionBatch batch;
         private static CompositionContainer container;
 
         static ProcessorFactory()
         {
-            DirectoryCatalog catalog = new DirectoryCatalog("directory");
-            container = new CompositionContainer(catalog);
+            var catalogs = new AggregateCatalog(new ComposablePartCatalog[] 
+                                               {
+                                                   new DirectoryCatalog("DatabasePlugins"),
+                                                   new AssemblyCatalog(typeof(IMigrationProcessorFactory).Assembly)
+                                               });
 
-            batch = new CompositionBatch();
+            container = new CompositionContainer(catalogs);
 
-            container.Compose(batch);
         }
 
         public static IMigrationProcessorFactory GetFactory(string processorName)
